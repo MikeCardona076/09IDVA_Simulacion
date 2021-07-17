@@ -1,12 +1,267 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>
-            Hola a todos
-        </title>
+        <meta charset="utf-8">
+        <title>Monte-Carlo</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Cleaning Company Website Template" name="keywords">
+        <meta content="Cleaning Company Website Template" name="description">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
     </head>
 
+    <script>
+
+        function metodomontecarlo(){
+          
+          var inta = parseFloat(document.getElementById("inpvalor1").value);
+          var intb = parseFloat(document.getElementById("inpvalor2").value);
+          var cuotasu = parseFloat(document.getElementById("inpcuota").value);
+          var aleatorio1 = Math.random();
+          var aleatorio2 = Math.random();
+                              
+          document.getElementById("txtrandom1").innerHTML = aleatorio1; 
+          document.getElementById("txtrandom2").innerHTML = aleatorio2;
+
+          var x1, x2, xi;
+
+          x1 = inta + aleatorio1;
+          x2 = intb - inta;
+          xi = x1 * x2;
+
+          document.getElementById("txtxi").innerHTML = "xi = " + inta + " + " + aleatorio1 + " ( " + intb + " - " + inta + " )";
+          document.getElementById("txtresultadoxi").innerHTML = "xi = " + xi ;  
+          
+          var yi = aleatorio2 * cuotasu;
+
+          document.getElementById("txtyi").innerHTML = "yi = " + aleatorio2 + " ( " + cuotasu + " )";
+          document.getElementById("txtresultadoyi").innerHTML = "yi = " + yi ;
+          
+          var fx1, fx2, fx;
+          fx1 = xi * xi;
+          fx2 = fx1 * xi;
+          fx = fx2 + 2;
+
+          document.getElementById("txtsusresultado").innerHTML = "f(x) = (" + xi + ")³ + " + 2;
+          document.getElementById("txtresresultado").innerHTML = "f(x) = " + fx;
+          
+          document.getElementById("txtcomparacion").innerHTML = yi + " ≤ " + fx;
+
+          if( yi <= fx ){
+            document.getElementById("txtcomparacionresultado").innerHTML = "Es un Punto de Exito.";
+            document.getElementById("txtresultadofinal").innerHTML = yi + " Es un Punto de Exito.";
+          }
+          else{
+            document.getElementById("txtcomparacionresultado").innerHTML = "No es un Punto de Exito.";
+            document.getElementById("txtresultadofinal").innerHTML = yi + " No es un Punto de Exito.";
+          }
+
+        }
+
+      </script>
+
     <body>
-        <marquee>DONE</marquee>
+        <div class="wrapper">
+            <!-- Header Start -->
+            <div class="header home">
+                <div class="container-fluid">
+                    <div class="header-top row align-items-center">
+                        <div class="col-lg-3">
+                            <div class="brand">
+                                <a href="index.html">
+                                    MonteCarlo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="navbar navbar-expand-lg bg-light navbar-light">
+                                <a href="#" class="navbar-brand">MENU</a>
+                                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                                    <div class="navbar-nav ml-auto">
+                                        <a href="index.html" class="nav-item nav-link active">Metodo Monte Carlo</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero row align-items-center">
+                        <div class="col-md-7">
+                            <h2>Resultado</h2>
+                            <p id="txtresultadofinal"></p>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form">
+                                <h3>Obtener Datos</h3>
+                                <form>
+                                    <input id='inpvalor1' class="form-control" type="text" placeholder="Ingresa el Primer Intervalo">
+                                    <input id='inpvalor2' class="form-control" type="text" placeholder="Ingresa el Segundo Intervalo">
+                                    <input id='inpcuota' class="form-control" type="text" placeholder="Ingresa la Cuota Superior">
+                                    <input type="button" class="btn btn-block" value="RESOLVER" onclick="metodomontecarlo()" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header End -->
+
+            <!-- FAQs Start -->
+            <div class="faqs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="section-header left">
+                                <h2>Preguntas Basicas</h2>
+                            </div>
+                            <img src="img/question.jpg" alt="Image">
+                        </div>
+                        <div class="col-md-7">
+                            <div id="accordion">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
+                                            <span>1</span> Formula que se uso para resolver.
+                                        </a>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Formula:</p>
+                                            <p>f(x) = x³ + 2</p>
+                                            <p>Sustituir Valores:</p>
+                                            <p id="txtsusresultado"></p>
+                                            <p>Resultado:</p>
+                                            <p id="txtresresultado"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseTwo">
+                                            <span>2</span> Formula para la comprobacion.
+                                        </a>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Formula:</p>
+                                            <p>yi ≤ f(xi) </p>
+                                            <p>Sustituir Valores:</p>
+                                            <p id="txtcomparacion"></p>
+                                            <p>Resultado:</p>
+                                            <p id="txtcomparacionresultado"></p>
+                                        </div>
+                                    </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseThree">
+                                            <span>3</span> Numeros Aleatorios Usados.
+                                        </a>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Aleatorio 1:</p>
+                                            <p id="txtrandom1"></p>
+                                            <p>Aleatorio 2:</p>
+                                            <p id="txtrandom2"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseFour">
+                                            <span>4</span> Como se resolvio xi.
+                                        </a>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Formula:</p>
+                                            <p>xi = Intervalo1 + Aleatorio1 (Intervalo2 - Intervalo1) </p>
+                                            <p>Sustituir Valores:</p>
+                                            <p id="txtxi"></p>
+                                            <p>Resultado:</p>
+                                            <p id="txtresultadoxi"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseFive">
+                                            <span>5</span> Como se resolvio yi.
+                                        </a>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Formula:</p>
+                                            <p>yi = Aleatorio2 (Cuota Superior) </p>
+                                            <p>Sustituir Valores:</p>
+                                            <p id="txtyi"></p>
+                                            <p>Resultado:</p>
+                                            <p id="txtresultadoyi"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseSix">
+                                            <span>6</span> Video Base.
+                                        </a>
+                                    </div>
+                                    <div id="collapseSix" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Video:</p>
+                                            <a href="https://www.youtube.com/watch?v=6_kaYOr8kV8&list=WL&index=7&t=254s&ab_channel=BetaMath">Click Aqui!</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FAQs End -->
+            
+            <!-- Footer Start -->
+            <div class="footer">
+                <div class="container copyright">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>&copy; <a href="https://cesun.edu.mx/">Cesun Universidad</a>, Todos los derechos reservados.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p> GRUPO: 09IDVA 16-07-2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+            
+            <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
     </body>
 </html>
