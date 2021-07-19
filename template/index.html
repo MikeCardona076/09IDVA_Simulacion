@@ -23,49 +23,96 @@
     <script>
 
         function metodomontecarlo(){
+          //Tiempos
+          var inptime1 = parseFloat(document.getElementById("inptimeone").value);
+          var inptime2 = parseFloat(document.getElementById("inptimetwo").value);
+          var inptime3 = parseFloat(document.getElementById("inptimethree").value);
+          var inptime4 = parseFloat(document.getElementById("inptimefour").value);
+          var inptime5 = parseFloat(document.getElementById("inptimefive").value);
+          //Probabilidad
+          var inprobability1 = parseFloat(document.getElementById("inprobabilityone").value);
+          var inprobability2 = parseFloat(document.getElementById("inprobabilitytwo").value);
+          var inprobability3 = parseFloat(document.getElementById("inprobabilitythree").value);
+          var inprobability4 = parseFloat(document.getElementById("inprobabilityfour").value);
+          var inprobability5 = parseFloat(document.getElementById("inprobabilityfive").value);
           
-          var inta = parseFloat(document.getElementById("inpvalor1").value);
-          var intb = parseFloat(document.getElementById("inpvalor2").value);
-          var cuotasu = parseFloat(document.getElementById("inpcuota").value);
-          var aleatorio1 = Math.random();
-          var aleatorio2 = Math.random();
-                              
-          document.getElementById("txtrandom1").innerHTML = aleatorio1; 
-          document.getElementById("txtrandom2").innerHTML = aleatorio2;
+          var rangeini1, rangeini2, rangeini3, rangeini4, rangeini5;
+          var rangefin1, rangefin2, rangefin3, rangefin4, rangefin5;
+          //Rango 1
+          rangeini1 = 0;
+          rangefin1 = inprobability1;
+          //Rango 2
+          rangeini2 = rangefin1;
+          rangefin2 = rangeini2 + inprobability2;
+          //Rango 3
+          rangeini3 = rangefin2;
+          rangefin3 = rangeini3 + inprobability3;
+          //Rango 4
+          rangeini4 = rangefin3;
+          rangefin4 = rangeini4 + inprobability4;
+          //Rango 5
+          rangeini5 = rangefin4;
+          rangefin5 = rangeini5 + inprobability5;
 
-          var x1, x2, xi;
+          if(rangefin5 != 1){
+              alert("LA PROBABILIDAD NO ES DEL 100%");
+              window.location.href = "index.html";
 
-          x1 = inta + aleatorio1;
-          x2 = intb - inta;
-          xi = x1 * x2;
+          }else{
+            //Mostrar tabla de rangos
 
-          document.getElementById("txtxi").innerHTML = "xi = " + inta + " + " + aleatorio1 + " ( " + intb + " - " + inta + " )";
-          document.getElementById("txtresultadoxi").innerHTML = "xi = " + xi ;  
-          
-          var yi = aleatorio2 * cuotasu;
+            //(TIEMPO)
+            document.getElementById("txtmining1").innerHTML = inptime1;
+            document.getElementById("txtmining2").innerHTML = inptime2;
+            document.getElementById("txtmining3").innerHTML = inptime3;
+            document.getElementById("txtmining4").innerHTML = inptime4;
+            document.getElementById("txtmining5").innerHTML = inptime5;
+            //(PROBABILIDAD)
+            document.getElementById("txtprobing1").innerHTML = inprobability1;
+            document.getElementById("txtprobing2").innerHTML = inprobability2;
+            document.getElementById("txtprobing3").innerHTML = inprobability3;
+            document.getElementById("txtprobing4").innerHTML = inprobability4;
+            document.getElementById("txtprobing5").innerHTML = inprobability5;
+            //(RANGO INICIAL)
+            document.getElementById("txtrangincal1").innerHTML = rangeini1;
+            document.getElementById("txtrangincal2").innerHTML = rangeini2;
+            document.getElementById("txtrangincal3").innerHTML = rangeini3;
+            document.getElementById("txtrangincal4").innerHTML = rangeini4;
+            document.getElementById("txtrangincal5").innerHTML = rangeini5;
+            //(RANGO FINAL)
+            document.getElementById("txtrangfincal1").innerHTML = rangefin1;
+            document.getElementById("txtrangfincal2").innerHTML = rangefin2;
+            document.getElementById("txtrangfincal3").innerHTML = rangefin3;
+            document.getElementById("txtrangfincal4").innerHTML = rangefin4;
+            document.getElementById("txtrangfincal5").innerHTML = rangefin5;
+            //Tabal de llegadas
 
-          document.getElementById("txtyi").innerHTML = "yi = " + aleatorio2 + " ( " + cuotasu + " )";
-          document.getElementById("txtresultadoyi").innerHTML = "yi = " + yi ;
-          
-          var fx1, fx2, fx;
-          fx1 = xi * xi;
-          fx2 = fx1 * xi;
-          fx = fx2 + 2;
+            //(Aleatorio)
+            var aleatorio;
+            aleatorio = Math.random()
+            document.getElementById("txtaleatorio1").innerHTML = aleatorio;
+            if(aleatorio >= rangeini1 && aleatorio <= rangefin1){
+                document.getElementById("txttimemin1").innerHTML = inptime1 + " min";
+                document.getElementById("txtfinrange1").innerHTML = inptime1 + " min";
+            }
+            if(aleatorio >= rangeini2 && aleatorio <= rangefin2){
+                document.getElementById("txttimemin1").innerHTML = inptime2 + " min";
+                document.getElementById("txtfinrange1").innerHTML = inptime2 + " min";
+            }
+            if(aleatorio >= rangeini3 && aleatorio <= rangefin3){
+                document.getElementById("txttimemin1").innerHTML = inptime3 + " min";
+                document.getElementById("txtfinrange1").innerHTML = inptime3 + " min";
+            }
+            if(aleatorio >= rangeini4 && aleatorio <= rangefin4){
+                document.getElementById("txttimemin1").innerHTML = inptime4 + " min";
+                document.getElementById("txtfinrange1").innerHTML = inptime4 + " min";
+            }
+            if(aleatorio >= rangeini5 && aleatorio <= rangefin5){
+                document.getElementById("txttimemin1").innerHTML = inptime5 + " min";
+                document.getElementById("txtfinrange1").innerHTML = inptime5 + " min";
+            }
 
-          document.getElementById("txtsusresultado").innerHTML = "f(x) = (" + xi + ")³ + " + 2;
-          document.getElementById("txtresresultado").innerHTML = "f(x) = " + fx;
-          
-          document.getElementById("txtcomparacion").innerHTML = yi + " ≤ " + fx;
-
-          if( yi <= fx ){
-            document.getElementById("txtcomparacionresultado").innerHTML = "Es un Punto de Exito.";
-            document.getElementById("txtresultadofinal").innerHTML = yi + " Es un Punto de Exito.";
           }
-          else{
-            document.getElementById("txtcomparacionresultado").innerHTML = "No es un Punto de Exito.";
-            document.getElementById("txtresultadofinal").innerHTML = yi + " No es un Punto de Exito.";
-          }
-
         }
 
       </script>
@@ -106,11 +153,35 @@
                         </div>
                         <div class="col-md-5">
                             <div class="form">
-                                <h3>Obtener Datos</h3>
+                                
                                 <form>
-                                    <input id='inpvalor1' class="form-control" type="text" placeholder="Ingresa el Primer Intervalo">
-                                    <input id='inpvalor2' class="form-control" type="text" placeholder="Ingresa el Segundo Intervalo">
-                                    <input id='inpcuota' class="form-control" type="text" placeholder="Ingresa la Cuota Superior">
+                                    <table>
+                                        <tr style="text-align: center;">
+                                            <th><h3>Tiempo<br>
+                                            (Minutos)</h3></th>
+                                            <th><h3>Probabilidad</h3></th>  
+                                        </tr>  
+                                        <tr>
+                                            <td><input id='inptimeone' class="form-control" type="text" placeholder="Primer Tiempo"></td>
+                                            <td><input id='inprobabilityone' class="form-control" type="text" placeholder="Probabilidad 1"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input id='inptimetwo' class="form-control" type="text" placeholder="Segundo Tiempo"></td>
+                                            <td><input id='inprobabilitytwo' class="form-control" type="text" placeholder="Probabilidad 2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input id='inptimethree' class="form-control" type="text" placeholder="Tercer Tiempo"></td>
+                                            <td><input id='inprobabilitythree' class="form-control" type="text" placeholder="Probabilidad 3"></td>  
+                                        </tr>
+                                        <tr>
+                                            <td><input id='inptimefour' class="form-control" type="text" placeholder="Cuarto Tiempo"></td>
+                                            <td><input id='inprobabilityfour' class="form-control" type="text" placeholder="Probabilidad 4"></td>  
+                                        </tr>  
+                                        <tr>
+                                            <td><input id='inptimefive' class="form-control" type="text" placeholder="Quinto Tiempo"></td>
+                                            <td><input id='inprobabilityfive' class="form-control" type="text" placeholder="Probabilidad 5"></td>  
+                                        </tr>                                         
+                                    </table>
                                     <input type="button" class="btn btn-block" value="RESOLVER" onclick="metodomontecarlo()" />
                                 </form>
                             </div>
@@ -135,98 +206,79 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <a class="card-link" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
-                                            <span>1</span> Formula que se uso para resolver.
+                                            <span>1</span> Tabla de Rangos.
                                         </a>
                                     </div>
                                     <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                         <div class="card-body">
-                                            <p>Formula:</p>
-                                            <p>f(x) = x³ + 2</p>
-                                            <p>Sustituir Valores:</p>
-                                            <p id="txtsusresultado"></p>
-                                            <p>Resultado:</p>
-                                            <p id="txtresresultado"></p>
+                                            <table class="table table-bordered table-dark table-hover"  style="text-align: center;">
+                                                <tr>
+                                                    <th><p>Minutos</p></th>
+                                                    <th><p>Probabilidad</p></th>
+                                                    <th><p>Rango Inicial</p></th>
+                                                    <th><p>Rango Final</p></th>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtmining1'></p></td>
+                                                    <td><p id='txtprobing1'></p></td>
+                                                    <td><p id='txtrangincal1'></p></td>
+                                                    <td><p id='txtrangfincal1'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtmining2'></p></td>
+                                                    <td><p id='txtprobing2'></p></td>
+                                                    <td><p id='txtrangincal2'></p></td>
+                                                    <td><p id='txtrangfincal2'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtmining3'></p></td>
+                                                    <td><p id='txtprobing3'></p></td>
+                                                    <td><p id='txtrangincal3'></p></td>
+                                                    <td><p id='txtrangfincal3'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtmining4'></p></td>
+                                                    <td><p id='txtprobing4'></p></td>
+                                                    <td><p id='txtrangincal4'></p></td>
+                                                    <td><p id='txtrangfincal4'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtmining5'></p></td>
+                                                    <td><p id='txtprobing5'></p></td>
+                                                    <td><p id='txtrangincal5'></p></td>
+                                                    <td><p id='txtrangfincal5'></p></td>
+                                                </tr>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
                                         <a class="card-link" data-toggle="collapse" href="#collapseTwo">
-                                            <span>2</span> Formula para la comprobacion.
+                                            <span>1</span> Llegadas.
                                         </a>
                                     </div>
                                     <div id="collapseTwo" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
-                                            <p>Formula:</p>
-                                            <p>yi ≤ f(xi) </p>
-                                            <p>Sustituir Valores:</p>
-                                            <p id="txtcomparacion"></p>
-                                            <p>Resultado:</p>
-                                            <p id="txtcomparacionresultado"></p>
+                                            <table class="table table-bordered table-dark table-hover"  style="text-align: center;">
+                                                <tr>
+                                                    <th><p>Llegadas</p></th>
+                                                    <th><p>Aleatorio</p></th>
+                                                    <th><p>Tiempo</p></th>
+                                                    <th><p>Tiempo Inicio</p></th>
+                                                    <th><p>Tiempo Final</p></th>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>1</p></td>
+                                                    <td><p id='txtaleatorio1'></p></td>
+                                                    <td><p id='txttimemin1'></p></td>
+                                                    <td><p>0 min</p></td>
+                                                    <td><p id='txtfinrange1'></p></td>
+                                                </tr>
+                                            </table>
                                         </div>
                                     </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseThree">
-                                            <span>3</span> Numeros Aleatorios Usados.
-                                        </a>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <p>Aleatorio 1:</p>
-                                            <p id="txtrandom1"></p>
-                                            <p>Aleatorio 2:</p>
-                                            <p id="txtrandom2"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#collapseFour">
-                                            <span>4</span> Como se resolvio xi.
-                                        </a>
-                                    </div>
-                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <p>Formula:</p>
-                                            <p>xi = Intervalo1 + Aleatorio1 (Intervalo2 - Intervalo1) </p>
-                                            <p>Sustituir Valores:</p>
-                                            <p id="txtxi"></p>
-                                            <p>Resultado:</p>
-                                            <p id="txtresultadoxi"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#collapseFive">
-                                            <span>5</span> Como se resolvio yi.
-                                        </a>
-                                    </div>
-                                    <div id="collapseFive" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <p>Formula:</p>
-                                            <p>yi = Aleatorio2 (Cuota Superior) </p>
-                                            <p>Sustituir Valores:</p>
-                                            <p id="txtyi"></p>
-                                            <p>Resultado:</p>
-                                            <p id="txtresultadoyi"></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#collapseSix">
-                                            <span>6</span> Video Base.
-                                        </a>
-                                    </div>
-                                    <div id="collapseSix" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <p>Video:</p>
-                                            <a href="https://www.youtube.com/watch?v=6_kaYOr8kV8&list=WL&index=7&t=254s&ab_channel=BetaMath">Click Aqui!</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div>                         
                                 
                                 </div> 
                             </div>
