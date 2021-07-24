@@ -147,14 +147,65 @@
                     </div>
                     
                     <div class="hero row align-items-center">
-                        <div class="col-md-7">
-                            <h2>Resultado</h2>
-                            <p id="txtresultadofinal"></p>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="form">
-                                
+                        <div class="col-md-12">
+                            <div class="form">                                
                                 <form>
+                                    <table>
+                                        <tr style="text-align: center;">
+                                            <th><h3>Servicios</th>
+                                            <th><h3>Probabilidad</h3></th>
+                                            <th><h3>Precio<br>
+                                            Promedio</h3></th>  
+                                        </tr>  
+                                        <tr>
+                                            <td><input id='inpservione' class="form-control" type="text" placeholder="Servicio 1"></td>
+                                            <td><input id='inprobabservone' class="form-control" type="text" placeholder="Probabilidad 1"></td>
+                                            <td><input id='inppriceone' class="form-control" type="text" placeholder="Precio 1"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input id='inpservitwo' class="form-control" type="text" placeholder="Servicio 2"></td>
+                                            <td><input id='inprobabservtwo' class="form-control" type="text" placeholder="Probabilidad 2"></td>
+                                            <td><input id='inppricetwo' class="form-control" type="text" placeholder="Precio 2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input id='inpservithree' class="form-control" type="text" placeholder="Servicio 3"></td>
+                                            <td><input id='inprobabservthree' class="form-control" type="text" placeholder="Probabilidad 3"></td>
+                                            <td><input id='inppricethree' class="form-control" type="text" placeholder="Precio 3"></td>  
+                                        </tr>
+                                        <tr>
+                                            <td><input id='inpservifour' class="form-control" type="text" placeholder="Servicio 4"></td>
+                                            <td><input id='inprobabservfour' class="form-control" type="text" placeholder="Probabilidad 4"></td> 
+                                            <td><input id='inppricefour' class="form-control" type="text" placeholder="Precio 4"></td> 
+                                        </tr>  
+                                        <tr>
+                                            <td><input id='inpservifive' class="form-control" type="text" placeholder="Servicio 5"></td>
+                                            <td><input id='inprobabservfive' class="form-control" type="text" placeholder="Probabilidad 5"></td>  
+                                            <td><input id='inppricefive' class="form-control" type="text" placeholder="Precio 5"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input id='inpservisix' class="form-control" type="text" placeholder="Servicio 6"></td>
+                                            <td><input id='inprobabservsix' class="form-control" type="text" placeholder="Probabilidad 6"></td>  
+                                            <td><input id='inppricesix' class="form-control" type="text" placeholder="Precio 6"></td>
+                                        </tr>                                          
+                                    </table>
+                                    <table>
+                                        <tr style="text-align: center;">
+                                            <th><h3>Vehiculos<br></th>
+                                            <th><h3>Probabilidad</h3></th>  
+                                        </tr>  
+                                        <tr>
+                                            <td><input id='inpnumcarone' class="form-control" type="text" placeholder="Vehiculo 1"></td>
+                                            <td><input id='inprobcarone' class="form-control" type="text" placeholder="Probabilidad 1"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input id='inpnumcartwo' class="form-control" type="text" placeholder="Vehiculo 2"></td>
+                                            <td><input id='inprobcartwo' class="form-control" type="text" placeholder="Probabilidad 2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input id='inpnumcarthree' class="form-control" type="text" placeholder="Vehiculo 3"></td>
+                                            <td><input id='inprobcarthree' class="form-control" type="text" placeholder="Probabilidad 3"></td>  
+                                        </tr>                                      
+                                    </table>
                                     <table>
                                         <tr style="text-align: center;">
                                             <th><h3>Tiempo<br>
@@ -255,7 +306,7 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <a class="card-link" data-toggle="collapse" href="#collapseTwo">
-                                            <span>1</span> Llegadas.
+                                            <span>2</span> Llegadas.
                                         </a>
                                     </div>
                                     <div id="collapseTwo" class="collapse" data-parent="#accordion">
@@ -278,7 +329,20 @@
                                             </table>
                                         </div>
                                     </div>
-                                </div>                         
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseThree">
+                                            <span>3</span> Resultado.
+                                        </a>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <h2>Resultado</h2>
+                                            <p id="txtresultadofinal"></p>
+                                        </div>
+                                    </div>
+                                </div>                          
                                 
                                 </div> 
                             </div>
