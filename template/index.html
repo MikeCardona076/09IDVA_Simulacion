@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +19,7 @@
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
     </head>
 
     <script>
@@ -286,7 +288,7 @@
                     <div class="header-top row align-items-center">
                         <div class="col-lg-3">
                             <div class="brand">
-                                <a href="index.html">
+                                <a href="#">
                                     MonteCarlo
                                 </a>
                             </div>
@@ -300,7 +302,7 @@
 
                                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                                     <div class="navbar-nav ml-auto">
-                                        <a href="index.html" class="nav-item nav-link active">Metodo Monte Carlo</a>
+                                        <a href="#" class="nav-item nav-link active">Metodo Monte Carlo</a>
                                     </div>
                                 </div>
                             </div>
