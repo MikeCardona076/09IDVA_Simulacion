@@ -110,11 +110,172 @@
             if(aleatorio >= rangeini5 && aleatorio <= rangefin5){
                 document.getElementById("txttimemin1").innerHTML = inptime5 + " min";
                 document.getElementById("txtfinrange1").innerHTML = inptime5 + " min";
+            }            
+            //VEHICULOS
+            var inpcar1 = document.getElementById("inpnumcarone").value;
+            var inpcar2 = document.getElementById("inpnumcartwo").value;
+            var inpcar3 = document.getElementById("inpnumcarthree").value;
+            //PROBABILIDAD
+            var inprobabilitycar1 = parseFloat(document.getElementById("inprobcarone").value);
+            var inprobabilitycar2 = parseFloat(document.getElementById("inprobcartwo").value);
+            var inprobabilitycar3 = parseFloat(document.getElementById("inprobcarthree").value);
+
+            var rangecarini1, rangecarini2, rangecarini3;
+            var rangecarfin1, rangecarfin2, rangecarfin3;
+            //Rango 1
+            rangecarini1 = 0;
+            rangecarfin1 = inprobabilitycar1;
+            //Rango 2
+            rangecarini2 = rangecarfin1;
+            rangecarfin2 = rangecarini2 + inprobabilitycar2;
+            //Rango 3
+            rangecarini3 = rangecarfin2;
+            rangecarfin3 = rangecarini3 + inprobabilitycar3;
+            
+            //(VEHICULOS)
+            document.getElementById("txtcaring1").innerHTML = inpcar1;
+            document.getElementById("txtcaring2").innerHTML = inpcar2;
+            document.getElementById("txtcaring3").innerHTML = inpcar3;
+            //(PROBABILIDAD)
+            document.getElementById("txtcarprobing1").innerHTML = inprobabilitycar1;
+            document.getElementById("txtcarprobing2").innerHTML = inprobabilitycar2;
+            document.getElementById("txtcarprobing3").innerHTML = inprobabilitycar3;
+            //(RANGO INICIAL)
+            document.getElementById("txtrangincar1").innerHTML = rangecarini1;
+            document.getElementById("txtrangincar2").innerHTML = rangecarini2;
+            document.getElementById("txtrangincar3").innerHTML = rangecarini3;
+            //(RANGO FINAL)
+            document.getElementById("txtrangfincar1").innerHTML = rangecarfin1;
+            document.getElementById("txtrangfincar2").innerHTML = rangecarfin2;
+            document.getElementById("txtrangfincar3").innerHTML = rangecarfin3;
+            //(Aleatorio)
+            var caraleatorio;
+            caraleatorio = Math.random()
+            document.getElementById("txtaleatoriocar1").innerHTML = caraleatorio;
+            if(caraleatorio >= rangecarini1 && caraleatorio <= rangecarfin1){
+                document.getElementById("txtcarcar1").innerHTML = inpcar1;
             }
+            if(caraleatorio >= rangecarini2 && caraleatorio <= rangecarfin2){
+                document.getElementById("txtcarcar1").innerHTML = inpcar2;
+            }
+            if(caraleatorio >= rangecarini3 && caraleatorio <= rangecarfin3){
+                document.getElementById("txtcarcar1").innerHTML = inpcar3;
+            }
+            //Servicios
+            var inpser1 = document.getElementById("inpservione").value;
+            var inpser2 = document.getElementById("inpservitwo").value;
+            var inpser3 = document.getElementById("inpservithree").value;
+            var inpser4 = document.getElementById("inpservifour").value;
+            var inpser5 = document.getElementById("inpservifive").value;
+            var inpser6 = document.getElementById("inpservifive").value;
+            //Probabilidad
+            var inprobabilityser1 = parseFloat(document.getElementById("inprobabservone").value);
+            var inprobabilityser2 = parseFloat(document.getElementById("inprobabservtwo").value);
+            var inprobabilityser3 = parseFloat(document.getElementById("inprobabservthree").value);
+            var inprobabilityser4 = parseFloat(document.getElementById("inprobabservfour").value);
+            var inprobabilityser5 = parseFloat(document.getElementById("inprobabservfive").value);
+            var inprobabilityser6 = parseFloat(document.getElementById("inprobabservsix").value);
+            //Precio
+            var inpcostser1 = parseFloat(document.getElementById("inppriceone").value);
+            var inpcostser2 = parseFloat(document.getElementById("inppricetwo").value);
+            var inpcostser3 = parseFloat(document.getElementById("inppricethree").value);
+            var inpcostser4 = parseFloat(document.getElementById("inppricefour").value);
+            var inpcostser5 = parseFloat(document.getElementById("inppricefive").value);
+            var inpcostser6 = parseFloat(document.getElementById("inppricesix").value);
 
-          }
+            var rangeserini1, rangeserini2, rangeserini3, rangeserini4, rangeserini5, rangeserini6;
+            var rangeserfin1, rangeserfin2, rangeserfin3, rangeserfin4, rangeserfin5, rangeserfin6;
+            //Rango 1
+            rangeserini1 = 0;
+            rangeserfin1 = inprobabilityser1;
+            //Rango 2
+            rangeserini2 = rangeserfin1;
+            rangeserfin2 = rangeserini2 + inprobabilityser2;
+            //Rango 3
+            rangeserini3 = rangeserfin2;
+            rangeserfin3 = rangeserini3 + inprobabilityser3;
+            //Rango 4
+            rangeserini4 = rangeserfin3;
+            rangeserfin4 = rangeserini4 + inprobabilityser4;
+            //Rango 5
+            rangeserini5 = rangeserfin4;
+            rangeserfin5 = rangeserini5 + inprobabilityser5;
+            //Rango 5
+            rangeserini6 = rangeserfin5;
+            rangeserfin6 = rangeserini6 + inprobabilityser6;
+            //(Servicio)
+            document.getElementById("txtsering1").innerHTML = inpser1;
+            document.getElementById("txtsering2").innerHTML = inpser2;
+            document.getElementById("txtsering3").innerHTML = inpser3;
+            document.getElementById("txtsering4").innerHTML = inpser4;
+            document.getElementById("txtsering5").innerHTML = inpser5;
+            document.getElementById("txtsering6").innerHTML = inpser6;
+            //(PROBABILIDAD)
+            document.getElementById("txtserprobing1").innerHTML = inprobabilityser1;
+            document.getElementById("txtserprobing2").innerHTML = inprobabilityser2;
+            document.getElementById("txtserprobing3").innerHTML = inprobabilityser3;
+            document.getElementById("txtserprobing4").innerHTML = inprobabilityser4;
+            document.getElementById("txtserprobing5").innerHTML = inprobabilityser5;
+            document.getElementById("txtserprobing6").innerHTML = inprobabilityser6;
+            //(PRECIO)
+            document.getElementById("txtserpriceing1").innerHTML = inpcostser1;
+            document.getElementById("txtserpriceing2").innerHTML = inpcostser2;
+            document.getElementById("txtserpriceing3").innerHTML = inpcostser3;
+            document.getElementById("txtserpriceing4").innerHTML = inpcostser4;
+            document.getElementById("txtserpriceing5").innerHTML = inpcostser5;
+            document.getElementById("txtserpriceing6").innerHTML = inpcostser6;
+            //(RANGO INICIAL)
+            document.getElementById("txtranginser1").innerHTML = rangeserini1;
+            document.getElementById("txtranginser2").innerHTML = rangeserini2;
+            document.getElementById("txtranginser3").innerHTML = rangeserini3;
+            document.getElementById("txtranginser4").innerHTML = rangeserini4;
+            document.getElementById("txtranginser5").innerHTML = rangeserini5;
+            document.getElementById("txtranginser6").innerHTML = rangeserini6;
+            //(RANGO FINAL)
+            document.getElementById("txtrangfinser1").innerHTML = rangeserfin1;
+            document.getElementById("txtrangfinser2").innerHTML = rangeserfin2;
+            document.getElementById("txtrangfinser3").innerHTML = rangeserfin3;
+            document.getElementById("txtrangfinser4").innerHTML = rangeserfin4;
+            document.getElementById("txtrangfinser5").innerHTML = rangeserfin5;
+            document.getElementById("txtrangfinser6").innerHTML = rangeserfin6;
+            //(Aleatorio)
+            var seraleatorio;
+                seraleatorio = Math.random()
+                document.getElementById("txtaleatorioser1").innerHTML = seraleatorio;
+                if(seraleatorio >= rangeserini1 && seraleatorio <= rangeserfin1){
+                    document.getElementById("txtser1").innerHTML = inpser1;                
+                    document.getElementById("txtcosser1").innerHTML = inpcostser1;
+                    document.getElementById("txtnumerodeventas").innerHTML = inpcostser1;
+                }
+                if(seraleatorio >= rangeserini2 && seraleatorio <= rangeserfin2){
+                    document.getElementById("txtser1").innerHTML = inpser2;
+                    document.getElementById("txtcosser1").innerHTML = inpcostser2;
+                    document.getElementById("txtnumerodeventas").innerHTML = inpcostser2;
+                }
+                if(seraleatorio >= rangeserini3 && seraleatorio <= rangeserfin3){
+                    document.getElementById("txtser1").innerHTML = inpser3;
+                    document.getElementById("txtcosser1").innerHTML = inpcostser3;
+                    document.getElementById("txtnumerodeventas").innerHTML = inpcostser3;
+                }
+                if(seraleatorio >= rangeserini4 && seraleatorio <= rangeserfin4){
+                    document.getElementById("txtser1").innerHTML = inpser4;
+                    document.getElementById("txtcosser1").innerHTML = inpcostser4;
+                    document.getElementById("txtnumerodeventas").innerHTML = inpcostser4;
+                }
+                if(seraleatorio >= rangeserini5 && seraleatorio <= rangeserfin5){
+                    document.getElementById("txtser1").innerHTML = inpser5;
+                    document.getElementById("txtcosser1").innerHTML = inpcostser5;
+                    document.getElementById("txtnumerodeventas").innerHTML = inpcostser5;
+                }
+                if(seraleatorio >= rangeserini6 && seraleatorio <= rangeserfin6){
+                    document.getElementById("txtser1").innerHTML = inpser6;
+                    document.getElementById("txtcosser1").innerHTML = inpcostser6;
+                    document.getElementById("txtnumerodeventas").innerHTML = inpcostser6;
+                }
+
+                document.getElementById("txtnumerodevehiculos").innerHTML = 1;
+            }
         }
-
       </script>
 
     <body>
@@ -306,10 +467,110 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <a class="card-link" data-toggle="collapse" href="#collapseTwo">
-                                            <span>2</span> Llegadas.
+                                            <span>2</span> Tabla de Vehiculos.
                                         </a>
                                     </div>
                                     <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <table class="table table-bordered table-dark table-hover"  style="text-align: center;">
+                                                <tr>
+                                                    <th><p>Vehiculos</p></th>
+                                                    <th><p>probabilidad</p></th>
+                                                    <th><p>Rango Inicial</p></th>
+                                                    <th><p>Rango Final</p></th>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtcaring1'></p></td>
+                                                    <td><p id='txtcarprobing1'></p></td>
+                                                    <td><p id='txtrangincar1'></p></td>
+                                                    <td><p id='txtrangfincar1'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtcaring2'></p></td>
+                                                    <td><p id='txtcarprobing2'></p></td>
+                                                    <td><p id='txtrangincar2'></p></td>
+                                                    <td><p id='txtrangfincar2'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtcaring3'></p></td>
+                                                    <td><p id='txtcarprobing3'></p></td>
+                                                    <td><p id='txtrangincar3'></p></td>
+                                                    <td><p id='txtrangfincar3'></p></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseThree">
+                                            <span>3</span> Tabla de Servicios.
+                                        </a>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <table class="table table-bordered table-dark table-hover"  style="text-align: center;">
+                                                <tr>
+                                                    <th><p>Servicios</p></th>
+                                                    <th><p>Probabilidad</p></th>
+                                                    <th><p>Precio de Servicio</p></th>
+                                                    <th><p>Rango Inicial</p></th>
+                                                    <th><p>Rango Final</p></th>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtsering1'></p></td>
+                                                    <td><p id='txtserprobing1'></p></td>
+                                                    <td><p id='txtserpriceing1'></p></td>
+                                                    <td><p id='txtranginser1'></p></td>
+                                                    <td><p id='txtrangfinser1'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtsering2'></p></td>
+                                                    <td><p id='txtserprobing2'></p></td>
+                                                    <td><p id='txtserpriceing2'></p></td>
+                                                    <td><p id='txtranginser2'></p></td>
+                                                    <td><p id='txtrangfinser2'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtsering3'></p></td>
+                                                    <td><p id='txtserprobing3'></p></td>
+                                                    <td><p id='txtserpriceing3'></p></td>
+                                                    <td><p id='txtranginser3'></p></td>
+                                                    <td><p id='txtrangfinser3'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtsering4'></p></td>
+                                                    <td><p id='txtserprobing4'></p></td>
+                                                    <td><p id='txtserpriceing4'></p></td>
+                                                    <td><p id='txtranginser4'></p></td>
+                                                    <td><p id='txtrangfinser4'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtsering5'></p></td>
+                                                    <td><p id='txtserprobing5'></p></td>
+                                                    <td><p id='txtserpriceing5'></p></td>
+                                                    <td><p id='txtranginser5'></p></td>
+                                                    <td><p id='txtrangfinser5'></p></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><p id='txtsering6'></p></td>
+                                                    <td><p id='txtserprobing6'></p></td>
+                                                    <td><p id='txtserpriceing6'></p></td>
+                                                    <td><p id='txtranginser6'></p></td>
+                                                    <td><p id='txtrangfinser6'></p></td>
+                                                </tr>
+                                                <tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseFour">
+                                            <span>4</span> Llegadas.
+                                        </a>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
                                             <table class="table table-bordered table-dark table-hover"  style="text-align: center;">
                                                 <tr>
@@ -325,6 +586,29 @@
                                                     <td><p id='txttimemin1'></p></td>
                                                     <td><p>0 min</p></td>
                                                     <td><p id='txtfinrange1'></p></td>
+                                                </tr>                                                
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseFive">
+                                            <span>5</span> Tipo de Vehiculo.
+                                        </a>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <table class="table table-bordered table-dark table-hover"  style="text-align: center;">
+                                                <tr>
+                                                    <th><p>Llegadas</p></th>
+                                                    <th><p>Aleatorio</p></th>
+                                                    <th><p>Vehiculo</p></th>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>1</p></td>
+                                                    <td><p id='txtaleatoriocar1'></p></td>
+                                                    <td><p id='txtcarcar1'></p></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -332,14 +616,47 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#collapseThree">
+                                        <a class="card-link" data-toggle="collapse" href="#collapseSix">
+                                            <span>5</span> Servicio Solicitado.
+                                        </a>
+                                    </div>
+                                    <div id="collapseSix" class="collapse" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <table class="table table-bordered table-dark table-hover"  style="text-align: center;">
+                                                <tr>
+                                                    <th>Llegadas</th>
+                                                    <th><p>Aleatorio</p></th>
+                                                    <th><p>Servicio</p></th>
+                                                    <th><p>Costo</p></th>
+                                                </tr>
+                                                <tr>
+                                                    <td><p>1</p></td>                                                    
+                                                    <td><p id='txtaleatorioser1'></p></td>
+                                                    <td><p id='txtser1'></p></td>
+                                                    <td><p id='txtcosser1'></p></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <a class="card-link" data-toggle="collapse" href="#collapse">
                                             <span>3</span> Resultado.
                                         </a>
                                     </div>
-                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                    <div id="collapse" class="collapse" data-parent="#accordion">
                                         <div class="card-body">
                                             <h2>Resultado</h2>
-                                            <p id="txtresultadofinal"></p>
+                                            <p>Vehiculos:</p>
+                                            <p id="txtnumerodevehiculos"></p>
+                                            <p>Servicio:</p>
+                                            <table>
+                                                <tr>
+                                                    <td>$</td><td><p id="txtnumerodeventas"></p></td>
+                                                </tr>
+                                            </table>
+                                            
                                         </div>
                                     </div>
                                 </div>                          
